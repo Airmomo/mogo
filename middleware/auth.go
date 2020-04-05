@@ -32,8 +32,10 @@ func AuthRequired() gin.HandlerFunc {
 				return
 			}
 		}
-
-		c.JSON(200, serializer.CheckLogin())
+		c.JSON(200, serializer.Err(
+			serializer.CodeNeverLogin,
+			"未登录",
+			nil))
 		c.Abort()
 	}
 }

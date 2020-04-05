@@ -15,6 +15,7 @@
 # vendor/
 
 # local
+.idea/
 .vscode/
 .env
 build.sh

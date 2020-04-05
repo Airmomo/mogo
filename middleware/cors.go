@@ -15,6 +15,7 @@ func Cors() gin.HandlerFunc {
 	config := cors.DefaultConfig()
 	config.AllowMethods = []string{"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"}
 	config.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Cookie"}
+	config.ExposeHeaders= []string{}
 
 	// 设置GIN的环境
 	// 默认环境设置为debug,这里通过判断环境变量GIN_MODE是否为release切换到生产环境
