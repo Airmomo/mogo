@@ -17,7 +17,7 @@ type UserRegisterService struct {
 func (service *UserRegisterService) valid() *serializer.Response {
 	if service.PasswordConfirm != service.Password {
 		return &serializer.Response{
-			Status: 40001,
+			Status: serializer.CodeRegisterErr,
 			Msg:    "两次输入的密码不相同",
 		}
 	}
@@ -26,7 +26,7 @@ func (service *UserRegisterService) valid() *serializer.Response {
 	model.DB.Model(&model.User{}).Where("nickname = ?", service.Nickname).Count(&count)
 	if count > 0 {
 		return &serializer.Response{
-			Status: 40001,
+			Status: serializer.CodeRegisterErr,
 			Msg:    "昵称被占用",
 		}
 	}
@@ -35,11 +35,10 @@ func (service *UserRegisterService) valid() *serializer.Response {
 	model.DB.Model(&model.User{}).Where("user_name = ?", service.UserName).Count(&count)
 	if count > 0 {
 		return &serializer.Response{
-			Status: 40001,
+			Status: serializer.CodeRegisterErr,
 			Msg:    "用户名已经注册",
 		}
 	}
-
 	return nil
 }
 
@@ -67,7 +66,7 @@ func (service *UserRegisterService) Register() serializer.Response {
 
 	// 创建用户
 	if err := model.DB.Create(&user).Error; err != nil {
-		return serializer.ParamErr("注册失败", err)
+		return serializer.DBErr("注册失败", err)
 	}
 
 	return serializer.BuildUserResponse(user)

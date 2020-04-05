@@ -5,6 +5,7 @@ import (
 	"mogo/model"
 	"mogo/util"
 	"os"
+	"time"
 
 	"github.com/joho/godotenv"
 )
@@ -16,6 +17,9 @@ func Init() {
 
 	// 设置日志级别
 	util.BuildLogger(os.Getenv("LOG_LEVEL"))
+
+	// 设置Jwt.StandardClaims的基本配置
+ 	util.BuildJwtStandardClaims(time.Hour*2,os.Getenv("JWT_SECRET"),os.Getenv("JWT_ISSUER"),os.Getenv("JWT_SigningMethod"))
 
 	// 读取翻译文件
 	if err := LoadLocales("conf/locales/zh-cn.yaml"); err != nil {
