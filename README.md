@@ -1,13 +1,66 @@
-# Mogo
+# Mogo-v1
 
-Mogo: Simple Single Golang Web Service
+查看详细介绍文档可前往 branch master。
 
-Mogo是基于singo框架进行优化的web服务开发框架
+## master 对比 v1
 
-使用Singo开发Web服务: 用最简单的架构，实现够用的框架，服务海量用户
-
-https://github.com/bydmm/singo
-
+<table>
+        <tr>
+            <th></th>
+            <th>master</th>
+            <th>v1</th>      
+        </tr>
+        <tr>
+            <th>更新速度</th>
+            <th>快</th>
+            <th>较慢</th>
+        </tr>
+        <tr>
+            <th>用户登录状态</th>
+            <th>Json Web Token</th>
+            <th>Cookies-Session</th>
+        </tr>
+        <tr>
+            <th>Gin</th>
+            <th>√</th>
+            <th>√</th>
+        </tr>
+        <tr>
+             <th>Gin-Session</th>
+             <th>√</th>
+             <th>√</th>
+        </tr>
+        <tr>
+             <th>Gin-Cors</th>
+             <th>√</th>
+             <th>√</th>
+        </tr>
+        <tr>
+             <th>GORM</th>
+             <th>√</th>
+             <th>√</th>
+        </tr>
+        <tr>
+             <th>Go-Redis</th>
+             <th>√</th>
+             <th>√</th>
+        </tr>
+        <tr>
+            <th>JWT-Go</th>
+            <th>√</th>
+            <th>×</th>
+        </tr>
+        <tr>
+             <th>Go dot env</th>
+             <th>√</th>
+             <th>√</th>
+        </tr>
+        <tr>
+            <th>Logger</th>
+            <th>√</th>
+            <th>√</th>
+        </tr>
+</table>
 
 ## 使用mogo开发的项目实例
 
@@ -28,7 +81,8 @@ https://github.com/Airmomo/jilijili
 5. [godotenv](https://github.com/joho/godotenv): 开发环境下的环境变量工具，方便使用环境变量
 6. [Gin-Cors](https://github.com/gin-contrib/cors): Gin框架提供的跨域中间件
 7. 自行实现了国际化i18n的一些基本功能
-8. 本项目是使用基于cookie实现的session来保存登录状态的，如果需要可以自行修改为token验证
+8. 已实现的可实例化的Log日志对象,可用于打印日志,通过env全局变量配置日志级别
+9. Branch v1 使用基于cookie实现的session来保存用户的登录状态.
 
 本项目已经预先实现了一些常用的代码方便参考和复用:
 
@@ -55,12 +109,17 @@ https://github.com/Airmomo/jilijili
 
 ```shell
 MYSQL_DSN="db_user:db_password@(localhost:3306)/db_name?charset=utf8&parseTime=True&loc=Local" # Mysql连接地址
+
 REDIS_ADDR="localhost:6379" # Redis端口和地址
 REDIS_PW="" # Redis连接密码
-REDIS_DB="" # Redis库从0到10
+REDIS_DB="0" # Redis库从0到10
+
+SESSION_NAME="gin-session" # Seesion名称，必须设置
 SESSION_SECRET="setOnProducation" # Seesion密钥，必须设置而且不要泄露
+
 GIN_MODE="debug" # gin框架运行环境
 LOG_LEVEL="debug" # 日志输出的级别
+
 # OSS对象存储设置
 OSS_END_POINT="oss-cn-hongkong.aliyuncs.com" 
 OSS_ACCESS_KEY_ID="xxx"
