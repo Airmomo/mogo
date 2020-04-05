@@ -4,11 +4,9 @@ Mogo: Simple Single Golang Web Service
 
 Mogo是基于singo框架进行优化和新增功能的web服务开发框架
 
-使用Singo开发Web服务: 用最简单的架构，实现够用的框架，服务海量用户
-
 https://github.com/bydmm/singo
 
-##优化
+## 优化
 
 1. 修复了由日志对象初始化失败引起的程序错误，并支持从环境变量设置日志级别
 2. 完善了跨域设置，修复了原先因gin-modle设置失败导致上线后跨域失败的问题
@@ -16,7 +14,7 @@ https://github.com/bydmm/singo
 4. mogo-v1保留了原先以cookie实现的session来保存登录状态的代码，如果需要可以自行选用mogo版本
 5. 对 Response 基础序列化器返回的不必要的json数据进行忽略。
 
-##新增
+## 新增
 
 1. 实现了基于jwt-go的token用户登录状态验证，并封装了jwt的基本属性，可通过环境变量设置
 
