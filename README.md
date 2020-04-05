@@ -1,8 +1,8 @@
 # Mogo-v1
 
-查看详细介绍文档可前往 branch master。
+查看详细介绍文档可前往 branch [master](https://github.com/Airmomo/mogo/tree/master)。
 
-## master 对比 v1
+## [mogo](https://github.com/Airmomo/mogo/tree/master) 对比  [mogo-v1](https://github.com/Airmomo/mogo/tree/v1)
 
 <table>
         <tr>
