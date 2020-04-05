@@ -104,14 +104,14 @@ https://github.com/Airmomo/jilijili
 本项目已经预先实现了一些常用的代码方便参考和复用:
 
 1. 创建了用户模型
-2. 实现了```/api/v1/user/register```用户注册接口
-3. 实现了```/api/v1/user/login```用户登录接口
-4. 实现了```/api/v1/user/me```用户资料接口(需要登录后获取session)
-5. 实现了```/api/v1/user/logout```用户登出接口(需要登录后获取session)
+2. 实现了```/api/master/user/register```用户注册接口
+3. 实现了```/api/master/user/login```用户登录接口
+4. 实现了```/api/master/user/me```用户资料接口(需要登录后获取jwt)
+5. 实现了```/api/master/user/logout```用户登出接口(需要登录后获取jwt)
 
 本项目已经预先创建了一系列文件夹划分出下列模块:
 
-1. api文件夹就是MVC框架的controller，负责协调各部件完成任务
+1. api文件夹就是MVC框架的controller，类似于接口，负责调用service并协调各部件完成任务
 2. model文件夹负责存储数据库模型和数据库操作相关的代码
 3. service负责处理比较复杂的业务，把业务代码模型化可以有效提高业务代码的质量（比如用户注册，充值，下单等）
 4. serializer储存通用的json模型，把model得到的数据库模型转换成api需要的json对象
@@ -119,6 +119,8 @@ https://github.com/Airmomo/jilijili
 6. auth权限控制文件夹
 7. util一些通用的小工具
 8. conf放一些静态存放的配置文件，其中locales内放置翻译相关的配置文件
+9. middleware存放gin中间件
+10 server存放服务端路由
 
 ## Godotenv
 
