@@ -2,9 +2,7 @@
 
 Mogo: Simple Single Golang Web Service
 
-Mogo是基于singo框架进行优化和新增功能的web服务开发框架
-
-https://github.com/bydmm/singo
+Mogo是基于Go常用的框架与组件进行优化和新增功能的web服务快速开发手脚架
 
 ## 优化
 
