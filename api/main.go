@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"mogo/conf"
 	"mogo/serializer"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 	validator "gopkg.in/go-playground/validator.v8"
@@ -12,7 +13,7 @@ import (
 
 // Ping 状态检查页面
 func Ping(c *gin.Context) {
-	c.JSON(200, serializer.Response{
+	c.JSON(http.StatusOK, serializer.Response{
 		Status: 0,
 		Msg:    "Pong",
 	})
