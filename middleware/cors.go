@@ -41,6 +41,8 @@ func Cors() gin.HandlerFunc {
 			}
 			return false
 		}
+		//支持所有请求
+		//config.AllowAllOrigins = true
 	}
 	config.AllowCredentials = true
 	return cors.New(config)

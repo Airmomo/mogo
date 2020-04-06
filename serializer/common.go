@@ -23,18 +23,19 @@ type TrackedErrorResponse struct {
 const (
 	// CodeNoRightErr 未授权访问
 	CodeNoRightErr = 403
-	// CodeNeverLogin 未登录
-	CodeNeverLogin = 1001
-	// CodeLoginOut 登出
-	CodeLoginOut = 1002
+
 	//CodeRegisterErr 用户注册信息错误
-	CodeRegisterErr = 30001
+	CodeRegisterErr = 40001
+	// CodeNeverLogin 用户未登录
+	CodeNeverLogin = 40002
+
 	//CodeParamErr 各种奇奇怪怪的参数错误
-	CodeParamErr = 40001
-	// CodeDBError 数据库操作失败
+	CodeParamErr = 40004
+	// CodeDBError 数据库操作失败,联系管理员
 	CodeDBError = 50001
-	// CodeEncryptError 加密失败
+	// CodeEncryptError 加密失败,联系管理员
 	CodeEncryptError = 50002
+
 )
 
 // Err 通用错误处理
