@@ -1,6 +1,6 @@
 # Mogo
 
-Mogo: Simple Single Golang Web Service
+Mogo: Airmomo Golang Web Service
 
 Mogo是基于Go常用的框架与组件进行优化和新增功能的web服务快速开发手脚架
 
